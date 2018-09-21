@@ -1,0 +1,44 @@
+{
+    "env": {
+        "es6": true,
+        "node": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 2017
+    },
+    "rules": {
+        "indent": [
+            "error",
+            "tab"
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ]
+    },
+    "overrides": [
+        {
+            "files" : ["__tests__/**/*"],
+            "env": {
+                "jest": true,
+                "node": true,
+                "jasmine": true
+            },
+            "rules" : {
+                // Tests use nesting for organizing test suites, so deep nesting
+                // is expected here
+                "max-nested-callbacks" : ["off"]
+            }
+        }
+    ]
+}

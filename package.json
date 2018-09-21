@@ -1,0 +1,25 @@
+{
+  "name": "@magnet.me/color",
+  "version": "1.0.0",
+  "description": "A very basic color library",
+  "main": "out/index.js",
+  "author": "Alex Kolpa",
+  "license": "Apache-2.0",
+  "scripts": {
+    "lint": "eslint src",
+    "build": "npm run lint  && npm run test && babel src --out-dir out -s",
+    "test": "jest --ci"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^5.6.0",
+    "jest": "^23.6.0",
+    "jest-junit": "^5.1.0"
+  },
+  "url": "git+https://github.com/Magnetme/color.git",
+  "jest": {
+    "reporters": [ "default", "jest-junit" ]
+  },
+  "private": false
+}
