@@ -34,7 +34,7 @@ function colorFromRgb(r, g, b, a) {
 	r = clamp(r / 255);
 	g = clamp(g / 255);
 	b = clamp(b / 255);
-	a = clamp(a / 255);
+	a = clamp(a);
 	const min = Math.min(r, g, b);
 	const max = Math.max(r, g, b);
 
@@ -81,12 +81,12 @@ export function fromHex(hexString) {
 	const r = parseInt(result[1], 16);
 	const g = parseInt(result[2], 16);
 	const b = parseInt(result[3], 16);
-	const a = result[4] !== undefined ? parseInt(result[4], 16) : 255;
+	const a = result[4] !== undefined ? parseInt(result[4], 16) / 255 : 1;
 	return colorFromRgb(r, g, b, a);
 }
 
 
-export function fromRgb(r, g, b, a=255) {
+export function fromRgb(r, g, b, a=1) {
 	return colorFromRgb(r, g, b, a);
 }
 

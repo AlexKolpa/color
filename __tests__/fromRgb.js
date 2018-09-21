@@ -6,7 +6,7 @@ describe('fromRgb', () => {
 		expect(color.components()).toEqual([4, 1, 0.66, 1]);
 	});
 	it('converts rgba to hsl properly', () => {
-		const color = fromRgb(255, 92, 81, 51);
+		const color = fromRgb(255, 92, 81, 0.2);
 		expect(color.components()).toEqual([4, 1, 0.66, 0.2]);
 	});
 	it('clamps improper rgb values', () => {
